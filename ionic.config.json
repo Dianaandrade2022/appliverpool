@@ -1,0 +1,7 @@
+{
+  "name": "Appliverpool",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
