@@ -1,17 +1,95 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="primary-rgb">
     <ion-title>
-      Tab 3
+      <ion-row>
+        <ion-col size="11">
+          Crédito
+     </ion-col>
+     <ion-col size="1">
+      <ion-button color="light" fill="clear"><ion-icon name="ellipsis-vertical-outline"></ion-icon></ion-button>
+     </ion-col>
+      </ion-row>
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+  <ion-header collapse="condense" color="primary-rgb">
     <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
+      <ion-row>
+        <ion-col size="10">
+          Crédito
+     </ion-col>
+     <ion-col size="2">
+      <ion-button color="light" fill="clear"><ion-icon name="bag-handle-outline"></ion-icon></ion-button>
+     </ion-col>
+      </ion-row>
     </ion-toolbar>
   </ion-header>
+  <ion-slides [options]="slideOpts" pager="true">
+    <ion-slide *ngFor="let add of adds">
+      <ion-img [src]="add.url"></ion-img>
+    </ion-slide>
+  </ion-slides>
+  
+  <ion-card class="ion-no-margin">
+    <img alt="Credito liverpool" src="../../assets/crédito/tarjetas.svg" />
+    <ion-card-header>
+      <ion-card-title>¿Ya cuentas con tu tarjeta Liverpool?</ion-card-title>
+      <ion-card-subtitle>Solicita tu tarjeta o ingresa tu cuenta ahora</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-button fill="outline" class="ion-margin-bottom"> Ingresar a mi cuenta</ion-button>
+      <ion-button fill="solid" expand="full">Solicitar mi tarjeta</ion-button>
+    </ion-card-content>
+  </ion-card>
+  
+  <div>
+    <ion-item class="ion-margin-top">
+      <ion-label>
+        <h1>Tarjetas Liverpool</h1>
+        <p>Elige la tarjeta que necesitas y obtén increíbles beneficios</p>
+      </ion-label>
+    </ion-item>
+    <ion-card *ngFor="let card of cards">
+      <ion-card-header>
+        <ion-row>
+          <ion-col>
+            <ion-img [src]="card.url"></ion-img> 
+          </ion-col>
+          <ion-col>
+            <h1>Liverpool</h1>
+            <p>{{card.desc}}</p>
+          </ion-col>
+      </ion-row>
+      </ion-card-header>
+      <ion-item>
+        <ion-card-content>
+          <ul>
+            <li>{{card.feature1}}</li>
+            <li>{{card.feature2}}</li>
+            <li>{{card.feature3}}</li>
+          </ul>
+        </ion-card-content>
+      </ion-item>
+        <div>
+          <ion-button fill="clear">
+                <p>Ver más información</p>
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+          </ion-button>
+        </div>
+    </ion-card>
+    
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button fill="solid" class="ion-margin-bottom"> Solicítala ahora</ion-button>
+        <ion-button fill="outline" expand="full">Comparador de tarjetas</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  </div>
 
   <app-explore-container name="Tab 3 page"></app-explore-container>
 </ion-content>

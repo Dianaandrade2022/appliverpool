@@ -1,0 +1,25 @@
+<ion-toolbar>
+  <ion-button color="light" expand="full" id="modal-local">
+    <ion-icon name="location-outline"></ion-icon>
+    Selecciona tu tienda
+    <ion-icon name="chevron-forward-outline"></ion-icon>
+  </ion-button>
+</ion-toolbar>
+
+<ion-modal
+    trigger="modal-local"
+    [initialBreakpoint]="0.30"
+    [breakpoints]="[0, 0.25, 0.5, 0.75]"
+    handleBehavior="cycle"
+  >
+    <ng-template>
+      <ion-content class="ion-padding">
+        <ion-toolbar fill="light">
+          <ion-title fill="tertiary">Selecciona una tienda</ion-title>
+          <ion-buttons slot="end">
+            <ion-button color="light"><ion-icon name="close-outline"></ion-icon></ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-content>
+    </ng-template>
+  </ion-modal>

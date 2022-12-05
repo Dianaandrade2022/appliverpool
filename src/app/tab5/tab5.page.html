@@ -1,17 +1,56 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="primary-rgb">
     <ion-title>
-      Tab 5
+      <ion-row>
+        <ion-col size="10">
+          <ion-title size="large">Mi cuenta</ion-title>
+        </ion-col>
+        <ion-col size="2">
+          <ion-button size="3" fill="clear" color="light" class="ion-no-padding"><ion-icon name="bag-handle-outline"></ion-icon></ion-button>         </ion-col>
+      </ion-row>
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+  <ion-header collapse="condense" color="primary-rgb">
     <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
+      <ion-title>
+        <ion-row>
+          <ion-col size="10">
+            <ion-title size="large">Mi cuenta</ion-title>
+          </ion-col>
+          <ion-col size="2">
+            <ion-button size="3" fill="clear" color="light" class="ion-no-padding"><ion-icon name="bag-handle-outline"></ion-icon></ion-button>         </ion-col>
+        </ion-row>
+      </ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-grid>
+      <ion-label *ngFor="let button of buttons">
+        <ion-button *ngIf="button.id <=2" fill="outline">
+          <a [href]="button.url">{{button.placeholder}}</a>
+          <ion-icon name="chevron-forward-outline" class="ion-text-end"></ion-icon>
+        </ion-button>
+      </ion-label>
+
+      <ion-label>Ajustes de compra</ion-label>
+      <ion-label *ngFor="let button of buttons">
+        <ion-button *ngIf="button.id >2 && button.id<=6" fill="outline">
+        <a [href]="button.url">{{button.placeholder}}</a>
+        <ion-icon name="chevron-forward-outline" class="ion-text-end"></ion-icon>
+      </ion-button>
+      </ion-label>
+
+      <ion-label>Información</ion-label>
+      <ion-label *ngFor="let button of buttons">
+        <ion-button *ngIf="button.id >6" fill="outline">
+        <a [href]="button.url">{{button.placeholder}}</a>
+        <ion-icon name="chevron-forward-outline" class="ion-text-end"></ion-icon>
+      </ion-button>
+      </ion-label>
+
+  </ion-grid>
 
   <app-explore-container name="Tab 5 page"></app-explore-container>
 </ion-content>

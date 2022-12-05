@@ -1,31 +1,46 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      <ion-row>
-        <ion-col size="9">
-          <ion-searchbar placeholder="Buscar en liverpool..."></ion-searchbar>
-     </ion-col>
-     <ion-col size="3">
-      <ion-icon name="bag-handle-outline"></ion-icon>
-     </ion-col>
-      </ion-row>
-    </ion-title>
-  </ion-toolbar>
+  <app-toolbar></app-toolbar>
+  <app-toolbar2></app-toolbar2>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
-    <ion-toolbar >
-      <ion-row>
-        <ion-col size="9">
-          <ion-searchbar placeholder="Buscar en liverpool..."></ion-searchbar>
-     </ion-col>
-     <ion-col size="3">
-      <ion-icon name="bag-handle-outline"></ion-icon>
-     </ion-col>
-      </ion-row>
-    </ion-toolbar>
+    <app-toolbar></app-toolbar>
+    <app-toolbar2></app-toolbar2>
   </ion-header>
+  <ion-card>
+  
+    <ion-card-content>
+      <img alt="banner publicidad" src="../../assets/home/banner.jpg" width="100%"/>
+      <h2>¡Ultimas horas hasta 50% de descuento!</h2>
+    </ion-card-content>
+  </ion-card>
+  <div>
+    <ion-button slot="fixed" fill="" expand="block"><ion-icon name="chatbubble-ellipses-outline" color="light"></ion-icon></ion-button>
+  </div>  
+  <div>
+    <ion-toolbar class="promocion">
+      <div>
+      <ul>
+        <li>Cámaras hasta 30% de descuento</li>
+        <li><a href="">Ver más</a></li>
+      </ul>
+      </div>
+    </ion-toolbar>
+  </div>
+  <div class="card">
+    <ion-slides [options]="slideOpts">
+
+      <ion-slide *ngFor="let picture of pictures">
+        <ion-card-content>
+        <ion-img [src]="picture.url"></ion-img>
+          <h6>{{picture.description}}</h6>
+        <p>${{picture.precio}}.00</p>
+        </ion-card-content>
+      </ion-slide>
+    </ion-slides>
+  </div>
+  
   
   <app-explore-container name="Tab 1 page"></app-explore-container>
   

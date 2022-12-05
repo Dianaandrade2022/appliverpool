@@ -1,0 +1,48 @@
+// div>ion-button{
+//     padding: 0;
+//     width: fit-content;
+//     position: fixed;
+//     z-index: 100;
+//     margin: -15vh 84vw -10px;
+//     background-color: #e7009e;
+//     border-radius: 12px 0px 0px 12px;
+//     & ion-icon{
+//         transform: rotate(90deg);
+//     }
+// }
+ion-button[slot="fixed"] {
+    top: 10%;
+    right: 20px;
+  }
+
+.promocion{
+    & div>ul>li{
+    display: inline-block;
+    & a{
+        color: gray;
+        padding-left: 10px;
+    }
+    }
+}
+*{
+    font-size: small;
+}
+.card{
+    margin: 0;
+}
+img{
+    background-size: cover;
+}
+ion-card-content{
+    padding: 0;
+    // background-color: blue;
+    height: min-content;
+    justify-content:flex-start;
+    & ion-img{
+        height: min-content;
+        width: fit-content;
+    }
+}
+
+
+
